@@ -608,6 +608,7 @@ def telemetry_quali_plots(df1, df2, driver1, driver2, selected_metrics, circuit_
             fig.update_yaxes(title_text=f'{unit}',  
                              row=i + 1,
                              col=1)
+            
             fig.update_xaxes(ticks = 'outside', 
                              ticklen = 10,
                              tickcolor = 'black')
@@ -636,7 +637,10 @@ def telemetry_quali_plots(df1, df2, driver1, driver2, selected_metrics, circuit_
             print(f"Metric '{metric}' not found in one of the DataFrames")
 
     # Update x-axis label for the last subplot
-    fig.update_xaxes(title_text='Lap distance (meters)', row=num_metrics, col=1)
+    fig.update_xaxes(title_text='Lap distance (meters)', 
+                     row=num_metrics, 
+                     col=1,
+                         title_font =dict(size=15))
     
     # Update layout settings
     fig.update_layout(
@@ -796,6 +800,7 @@ def telemetry_race_plots(telemetry_plots, selected_metrics, circuit_info):
     # Loop through each telemetry plot and add traces to the plot
     for df, driver, lap in telemetry_plots:
         for i, metric in enumerate(selected_metrics):
+            unit = metric_units.get(metric, '')
             if metric in df.columns:
                 fig.add_trace(
                     go.Scatter(
@@ -815,7 +820,12 @@ def telemetry_race_plots(telemetry_plots, selected_metrics, circuit_info):
                              ticklen = 10,
                              tickcolor = 'black')
         color_index += 1
-
+    
+    # Name the y-Axis 
+    for i, metric in enumerate(selected_metrics):
+        unit = metric_units.get(metric, '')
+        fig.update_yaxes(title_text=unit, row=i + 1, col=1)
+        
     # Add corner annotations for each subplot
     for _, corner in circuit_info.corners.iterrows():
         for j in range(num_metrics): 
@@ -832,7 +842,10 @@ def telemetry_race_plots(telemetry_plots, selected_metrics, circuit_info):
             )
             
         # Update x-axis label for the last subplot
-        fig.update_xaxes(title_text='Lap distance (meters)', row=num_metrics, col=1)
+        fig.update_xaxes(title_text='Lap distance (meters)', 
+                         row=num_metrics, 
+                         col=1,
+                         title_font =dict(size=15))
 
     # Update layout settings
     fig.update_layout(
