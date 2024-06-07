@@ -1,0 +1,12 @@
+streamlit==1.34.0
+fastf1==3.3.5
+datetime
+numpy==1.25.2
+pandas==1.4.2
+plotly==5.13.1
+streamlit-extras==0.4.2
+base64
+numpy==1.25.2
+pandas==1.4.2
+plotly==5.13.1
+streamlit-extras==0.4.2
