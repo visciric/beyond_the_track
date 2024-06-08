@@ -25,7 +25,7 @@ def render():
         with st.spinner('Calculating lap times...⏲️'):
             st.subheader('Fastest Lap Time of Each Driver Over Sessions (Q1 to Q3)')
 
-            col1, col2 = st.columns([1.1,1])
+            col1, col2 = st.columns([.9,1])
             with col1:
                 
 

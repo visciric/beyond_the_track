@@ -34,7 +34,7 @@ def render():
             if len(selected_drivers) == 2:
                 
                  # Add Columns
-                col1, col2 = st.columns([1.9,1])
+                col1, col2 = st.columns([1.9,1]) # set the column ratio
                 
                 with col1:
                     # Data preparation and plotting for the selected drivers                
@@ -94,7 +94,7 @@ def render():
 
                 if len(telemetry_plots) > 0:
                     
-                    col1, col2 = st.columns([1.9,1])
+                    col1, col2 = st.columns([2,.85]) # set the column ratio
                     with col2:
                         
                         circuit_info = session.get_circuit_info()

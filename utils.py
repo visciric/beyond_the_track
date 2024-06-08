@@ -528,8 +528,8 @@ def driver_comparison_track_plot(session, selected_drivers):
         legend_title="Driver",
         xaxis=dict(range=x_range, showgrid=False, zeroline=False, visible=False, fixedrange=True),
         yaxis=dict(range=y_range, showgrid=False, zeroline=False, visible=False, fixedrange=True),
-        width=500, 
-        height=600,
+        width=450, 
+        height=550,
         dragmode=False)
 
     return fig
@@ -645,8 +645,8 @@ def telemetry_quali_plots(df1, df2, driver1, driver2, selected_metrics, circuit_
     # Update layout settings
     fig.update_layout(
         showlegend=False,
-        height= 800, #* num_metrics, 
-        width=900,
+        height= 800, 
+        width=800,
         hovermode='x unified')
     
     return fig
@@ -753,8 +753,8 @@ def race_track_plot(session, circuit_info):
         showlegend=False,
         xaxis=dict(visible=False, range=x_range),
         yaxis=dict(visible=False, range=y_range),
-        height=600,
-        width=500,
+        height=550,
+        width=450, 
     )
     fig.update_xaxes(fixedrange=True)
     fig.update_yaxes(fixedrange=True)
@@ -850,7 +850,7 @@ def telemetry_race_plots(telemetry_plots, selected_metrics, circuit_info):
     # Update layout settings
     fig.update_layout(
         height= 800, 
-        width=950,
+        width=870,
         hovermode='x unified',
         showlegend=False
     )
