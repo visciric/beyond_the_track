@@ -10,7 +10,7 @@ st.set_page_config(
     page_title="PODSV Project FS 2024",
     page_icon="🏎️",
     menu_items={
-        "About": "# Beyond the Track is a School Project \n ## HAVE FUN! 🏎️💨"
+        "About": "# Beyond the Track is a School Project \n ## 'If you no longer go for the gap that exists, you're no longer a racing driver' 🏎️💨 \n### *Ayrton Senna*"
     },
 )
 
