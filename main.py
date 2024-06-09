@@ -94,8 +94,13 @@ if "gp" not in st.session_state or st.session_state["gp"] not in available_gps:
         available_gps[-1] if available_gps else None
     )  # Default to the last event
 
+# Check if today is Sunday
+today_is_sunday = datetime.now().weekday() == 6
+
+# Set session to "Qualifying" if today is Sunday, otherwise default to the last option
 if "session" not in st.session_state:
-    st.session_state["session"] = available_sessions[-1]  # Default to the last option
+    st.session_state["session"] = "Qualifying" if today_is_sunday else available_sessions[-1]
+
 
 # Use two columns to display dropdowns for selecting GP and Session neatly next to each other
 col_gp, col_session = st.columns([2, 2])
