@@ -1215,7 +1215,8 @@ def race_standings_plot(new_pivot, races):
 
     # Ensure fixed range for x and y axes
     fig.update_layout(xaxis_fixedrange=True, yaxis_fixedrange=True)
-
+    fig.update_xaxes(tickangle=-45)
+    
     return fig
 
 
@@ -1346,6 +1347,7 @@ def constructors_standings(new_pivot, races):
     fig.update_layout(
         xaxis_fixedrange=True,
         yaxis_fixedrange=True,)
+    fig.update_xaxes(tickangle=-45)
     
     return fig
 
