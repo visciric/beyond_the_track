@@ -22,7 +22,7 @@ def render():
     # QUALIFYING    
     if session_type == 'Qualifying':
         with st.spinner('Tyres are beeing changed...🛞'):
-            session = load_session(datetime.now().year, gp, session_type)
+            session = load_session(2024, gp, session_type) #datetime.now().year
             circuit_info = session.get_circuit_info()
             st.title('Drivers Comparison')
 
@@ -58,7 +58,7 @@ def render():
     elif session_type == 'Race':
         
         with st.spinner(text='Race data is loading...'):
-            session = load_session(datetime.now().year, gp, session_type)
+            session = load_session(2024, gp, session_type) #datetime.now().year
             circuit_info = session.get_circuit_info()
         st.title('Comparing Drivers')
 

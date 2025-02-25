@@ -20,7 +20,7 @@ def render():
     # QUALIFYING 
     if session_type == 'Qualifying':
         with st.spinner('Unveiling strategy metrics...💻'):
-            session = load_session(datetime.now().year, gp, session_type)
+            session = load_session(2024, gp, session_type)
             st.title('Qulifying Tyre Strategies')
             
             # Prepare session data
@@ -37,7 +37,7 @@ def render():
     # RACE
     elif session_type == 'Race':
         with st.spinner(text='Extracting sector performance insights...🏎️'):
-            session = load_session(datetime.now().year, gp, session_type)
+            session = load_session(2024, gp, session_type)
 
             # Display tyre strategies plot
             st.subheader('Tyre Strategies')

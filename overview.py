@@ -20,7 +20,7 @@ def render():
     # QUALIFYING
     if session_type == "Qualifying":
         with st.spinner(text="Preparing Qualifying Data... 📊"):
-            session = load_session(datetime.now().year, gp, session_type)
+            session = load_session(2024, gp, session_type) #datetime.now().year
             circuit_info = session.get_circuit_info()
             quali_results = get_quali_ranking(session)
             fastest_laptime = session.laps.pick_fastest()
@@ -59,7 +59,7 @@ def render():
     # RACE
     elif session_type == "Race":
         with st.spinner(text="Preparing Racing Data... 📊"):
-            session = load_session(datetime.now().year, gp, session_type)
+            session = load_session(2024, gp, session_type) #datetime.now().year
             circuit_info = session.get_circuit_info()
             round_number = session.event['RoundNumber']
             # round_number = round_number-1

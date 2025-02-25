@@ -75,7 +75,7 @@ This tool aims to provide fans, analysts, and enthusiasts with a deeper understa
 
 
 # Get the current year to fetch relevant F1 event data
-current_year = datetime.now().year
+current_year = 2024
 
 # Initialize or access a session state variable for user interaction modes
 if "mode" not in st.session_state:

@@ -29,7 +29,7 @@ def render():
             with col1:
                 
 
-                session = load_session(datetime.now().year, gp, session_type)
+                session = load_session(2024, gp, session_type)  #datetime.now().year
                 st.table(qualifying_results(session))
                 
             with col2:
@@ -38,7 +38,7 @@ def render():
     # RACE
     elif session_type == 'Race':
         with st.spinner(text='Almost there! Finalizing the latest standings...🔄'):
-            session = load_session(datetime.now().year, gp, session_type)
+            session = load_session(2024, gp, session_type) #datetime.now().year
             round_number = session.event['RoundNumber']
 
 
